@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <!-- stylesheets -->
+    <link rel="stylesheet" href="style.css">
+    <!-- scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular.js"></script>
+    <script src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-animate.js"></script>
+</head>
+<h1>Customizing animations and ng-hide and ng-show</h1>
+
+<body ng-app='app' ng-controller="TestCtrl as test">
+    <button ng-click="test.showButtonOne = !test.showButtonOne">Toggle</button>
+    <div class="button-one" ng-show="test.showButtonOne">Testing box 1</div>
+    <h1>Animate entrances & exits of ng-repeat elements
+</h1>
+    <button type="button" name="add" ng-click="test.people.push({name: 'Rich Evans'})">Add rich to the ng repeat</button>
+    <button type="button" name="remove" ng-click="test.people.pop()">Remove people</button>
+    <input type="text" ng-model="search.name" />
+    <div class="item" ng-repeat="person in test.people">
+        {{ person.name }}
+    </div>
+    <h1>Activate specific animations using ng-class</h1>
+    <button ng-click="test.bigger = !test.bigger">
+      Set bigger = {{ !test.bigger }}
+    </button>
+    <button ng-click="test.lightTheme = !test.lightTheme">
+      Set lightTheme = {{ !test.lightTheme }}
+    </button>
+    <button ng-click="test.lightTheme = !test.lightTheme; test.bigger = !test.bigger">
+      Toggle Both
+    </button>
+    <div class="box" ng-class="{ 'bigger': test.bigger, 'light-theme': test.lightTheme }">
+        This is just a box.
+    </div>
+</body>
+
+</html>
