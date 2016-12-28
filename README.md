@@ -1,2 +1,2 @@
 ## Angular
-creating an angular tutorial, maybe move to angular 2
+creating an angular tutorial
